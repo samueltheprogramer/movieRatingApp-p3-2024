@@ -98,7 +98,7 @@ export default function SearchMovies() {
             height={50}
             alt="profile pic"
           />
-          <h1 className="text-sm">{auth.currentUser.displayName}</h1>
+          <h1 className="text-sm">{auth?.currentUser?.displayName}</h1>
           <button className="border-2 border-blue-400 rounded-3xl mt-1 bg-red-400 text-sm">
             sign-out
           </button>
@@ -118,14 +118,14 @@ export default function SearchMovies() {
                     width={100}
                     height={150}
                     className="h-[150px] "
-                    src={IMG_PREFIX + movie.poster_path}
+                    src={IMG_PREFIX + movie?.poster_path}
                     alt="IMG"
                   />
                 </div>
                 <div className="text-center flex w-full flex-col justify-center items-center">
-                  <h1>{movie.title}</h1>
-                  <h3>{movie.release_date}</h3>
-                  <h1>Ratings :{movie.vote_average}/10</h1>
+                  <h1>{movie?.title}</h1>
+                  <h3>{movie?.release_date}</h3>
+                  <h1>Ratings :{movie?.vote_average}/10</h1>
 
                   <div>
                     <label htmlFor="">like:</label>
@@ -133,7 +133,7 @@ export default function SearchMovies() {
                       className="rounded-md bg-white"
                       onChange={(e) => {
                         e.target.checked
-                          ? addToLikedMovies(movie.title, movie.poster_path)
+                          ? addToLikedMovies(movie?.title, movie?.poster_path)
                           : "";
                       }}
                       type="checkbox"
