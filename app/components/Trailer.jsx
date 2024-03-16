@@ -1,8 +1,5 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
-import YouTube from "react-youtube";
-import "react-youtube/dist/YouTube.esm";
 
 export default function Trailer({ movieId }) {
   const [videos, setVideos] = useState([]);
@@ -32,7 +29,6 @@ export default function Trailer({ movieId }) {
       <ReactPlayer
         width={300}
         height={150}
-        className="  "
         url={`https://www.youtube.com/embed/${videos[0]?.key}`}
       />
     </div>

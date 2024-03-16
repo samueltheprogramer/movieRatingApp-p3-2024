@@ -2,10 +2,8 @@
 
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../config/firebase";
-import Cookies from "universal-cookie";
-import { useRouter } from "next/navigation";
 
-const cookies = new Cookies();
+import { useRouter } from "next/navigation";
 
 export default function Auth() {
   const router = useRouter();
@@ -13,7 +11,7 @@ export default function Auth() {
   const handleSignInWithGoogle = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
-      cookies.set("auth-tocken", result.user.refreshToken);
+
       if (result) {
         router.push("/home");
       }

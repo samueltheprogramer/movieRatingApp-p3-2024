@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import YouTube from "react-youtube";
 import Trailer from "./Trailer";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { auth, db } from "../config/firebase";
@@ -170,7 +169,7 @@ export default function SearchMovies() {
                   src={IMG_PREFIX + movie.backdrop_path}
                   alt="IMG"
                 />
-                <Trailer movieId={movie.id} />
+                 <Trailer movieId={movie.id} />
 
                 <p className="text-center">{movie.overview}</p>
               </div>
